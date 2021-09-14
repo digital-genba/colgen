@@ -1,0 +1,19 @@
+{
+  "name": "colgen",
+  "version": "0.0.1",
+  "description": "Generate colours based on the required contrast ratio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/digital-genba/colgen.git"
+  },
+  "author": "Digital Genba",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/digital-genba/colgen/issues"
+  },
+  "homepage": "https://github.com/digital-genba/colgen#readme",
+}
