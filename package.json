@@ -16,4 +16,7 @@
     "url": "https://github.com/digital-genba/colgen/issues"
   },
   "homepage": "https://github.com/digital-genba/colgen#readme",
+  "dependencies": {
+    "chroma-js": "^2.1.2"
+  }
 }
