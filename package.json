@@ -5,7 +5,8 @@
   "type": "module",
   "main": "src/index.js",
   "scripts": {
-    "test": "NODE_OPTIONS='--experimental-vm-modules' jest"
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest",
+    "test:random": "NODE_OPTIONS='--experimental-vm-modules --max-old-space-size=12288' RUN_RANDOM_SUITE=true jest"
   },
   "repository": {
     "type": "git",

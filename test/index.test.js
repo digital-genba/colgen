@@ -1,34 +1,21 @@
 import _ from 'lodash/fp';
 import chroma from 'chroma-js';
+import { generateRandomHexColor } from './utils/utils';
+
+import selectedSuiteColors from './selectedSuiteColors';
+import testData from './testData';
 
 import {
   colorPairFromBaseByContrast
 } from '../src/index.js';
 
+const randomSuiteToggle = process.env.RUN_RANDOM_SUITE;
 
-const testColors = [
-  '#000000',
-  '#ffffff',
-  '#077bbd',
-];
+const testColors = randomSuiteToggle ?
+  _.map(() => (generateRandomHexColor()), _.range(0, 1000))
+  : selectedSuiteColors;
 
-const tests = [
-  {
-    requiredContrast: 5,
-    tests: _.map((color) => ({ baseColor: color }), testColors),
-  },
-  {
-    requiredContrast: 7,
-    tests: _.map((color) => ({ baseColor: color }), testColors),
-  },
-  {
-    requiredContrast: 21,
-    tests: _.map((color) => ({
-      baseColor: color,
-      result: ['#000000', '#ffffff'],
-    }), testColors),
-  },
-];
+const tests = testData(testColors);
 
 describe('colorPairFromBaseByContrast', () => {
   _.map((testSuite) => {
