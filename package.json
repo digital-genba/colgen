@@ -18,6 +18,9 @@
     "url": "https://github.com/digital-genba/colgen/issues"
   },
   "homepage": "https://github.com/digital-genba/colgen#readme",
+  "engines": {
+    "node": ">=16.0.0"
+  },
   "devDependencies": {
     "jest": "^27.2.0"
   },
