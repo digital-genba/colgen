@@ -1,4 +1,4 @@
-import _ from 'lodash/fp';
+import ceil from 'lodash/fp/ceil';
 import {
   Theme,
   Color,
@@ -9,7 +9,7 @@ export const colorPairFromBaseByContrast = (
   requiredContrast,
   baseColor,
 ) => {
-  const contrastFromCentre = _.ceil(Math.sqrt(
+  const contrastFromCentre = ceil(Math.sqrt(
     Math.abs(requiredContrast)
   ), 2);
 

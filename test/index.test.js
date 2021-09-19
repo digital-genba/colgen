@@ -1,4 +1,5 @@
-import _ from 'lodash/fp';
+import map from 'lodash/fp/map';
+import range from 'lodash/fp/range';
 import chroma from 'chroma-js';
 import { generateRandomHexColor } from './utils/utils';
 
@@ -12,15 +13,15 @@ import {
 const randomSuiteToggle = process.env.RUN_RANDOM_SUITE;
 
 const testColors = randomSuiteToggle ?
-  _.map(() => (generateRandomHexColor()), _.range(0, 1000))
+  map(() => (generateRandomHexColor()), range(0, 1000))
   : selectedSuiteColors;
 
 const tests = testData(testColors);
 
 describe('colorPairFromBaseByContrast', () => {
-  _.map((testSuite) => {
+  map((testSuite) => {
     describe(`with ${testSuite.requiredContrast}:1 contrast`, () => {
-      _.map((testData) => {
+      map((testData) => {
         test(`with ${testData.baseColor} base color`, () => {
           const generatedColors = colorPairFromBaseByContrast(
             testSuite.requiredContrast, testData.baseColor
